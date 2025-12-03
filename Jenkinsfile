@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    triggers {
+        githubPush()
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Webhook trigger successful"
+            }
+        }
+    }
+}
+
