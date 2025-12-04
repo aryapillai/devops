@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/yourname/web-demo.git'
+                    url: 'https://github.com/aryapillai/devops'
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
                 sshagent(credentials: ['appserver-key']) {
                     sh '''
                         echo "Copying index.html to Application Server..."
-                        scp index.html ubuntu@APP_SERVER_IP:/var/www/html/index.html
+                        scp index.html ubuntu@13.239.122.121:/var/www/html/index.html
                     '''
                 }
             }
